@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button id="mbutton" (click)="toggleSideBar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>
+      <img src="../../../../assets/images/logo1.png" width="150px" height="100px" />
+    </span>
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" class="flexgap">
+      <ul fxLayout="row">
+        <li>
+          <button class="btn mybutton" [matMenuTriggerFor]="menu" (click)="loginclick()" *ngIf="!validuser && !verfierUser">
+            <span>
+             <span class="headText">Login</span>
+              <mat-icon style="vertical-align: middle;" [hidden]="closed">arrow_drop_down</mat-icon>
+              <mat-icon style="vertical-align: middle;" [hidden]="!closed">arrow_drop_up</mat-icon>
+            </span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/user_login">User Login</button>
+            <button mat-menu-item routerLink="/verfier_login">
+              Verifier Login
+            </button>
+          </mat-menu>
+        </li>
+        <li>
+          <!-- <button mat-icon-button  > -->
+          <button class="btn mybutton" routerLink="/Registration"  *ngIf="!validuser && !verfierUser">
+            <!-- <mat-icon style="vertical-align: bottom;" class="headIcon">group_add</mat-icon> -->
+            <a class="logintext"><span class="headText">Register</span></a>
+          </button>
+        </li>
+        <li>
+          <button class="btn mybutton" routerLink="/Registration" *ngIf="validuser || verfierUser">
+            <!-- <mat-icon style="vertical-align: bottom;"  class="headIcon">exit_to_app</mat-icon> -->
+            <a class="logintext"><span class="headText">Logout</span></a>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files
+
+body{
+  background-color: lightgray !important;
+}
+.fixed-top{
+  position:fixed !important;
+}
+.text-color{
+  color: black;
+}
+.navcolor {
+  background: dodgerblue !important;
+}
+.footer {
+  background: black;
+}
+.corosalheight {
+  height:250px;
+}
+.fullwidth{
+ width:100%;
+ overflow: hidden;
+}
+ */
+

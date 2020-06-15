@@ -1,0 +1,54 @@
+
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="regform" (ngSubmit) = "regSubmit()" >
+      <img src="../../../assets/images/registericon.png" height="100px" width="100px"/>
+      <mat-error *ngIf="loginInvalid">
+        The username and password were not recognised
+      </mat-error>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="firstname" formControlName="firstname" required>
+        <mat-error>
+         Please provide first name
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="lastname" formControlName="lastname" required>
+        <mat-error>
+         Please provide last name
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="emailid" formControlName="emailid" required>
+        <mat-error>
+         Please provide email
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="phonenumber" formControlName="phonenumber" required>
+        <mat-error>
+         Please provide Mobilenumber
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width-input">
+        <input matInput type="password" placeholder="Password" formControlName="password" required>
+        <mat-error>
+          Please provide a valid password
+        </mat-error>
+
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input matInput type="password" placeholder="confirmpassword" formControlName="cnfpassword" required>
+        <mat-error>
+          Please provide a valid password
+        </mat-error>
+
+      </mat-form-field>
+      <mat-checkbox>Remember me?</mat-checkbox><br>
+      <button mat-raised-button color="primary">Register</button>
+    </form>
+  </mat-card-content>
+</mat-card>

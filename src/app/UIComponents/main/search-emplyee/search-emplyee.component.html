@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title>Search for the Details of Employee</mat-card-title><br>
+  <form role="form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Search with email here"
+            formControlName="email" />
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary">
+          Search
+        </button>
+      </div>
+    </div>
+  </form>
+</mat-card>
