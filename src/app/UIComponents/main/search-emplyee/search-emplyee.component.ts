@@ -9,6 +9,7 @@ import { FirebaseserviceService } from '../../../firebaseservice.service';
 import { HttpHeaders } from '@angular/common/http';
 import { Http, Headers } from '@angular/http';
 import {Email} from '../../../../assets/Js/smtp';
+import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
 // declare let Email: any;
 @Component({
   selector: 'app-search-emplyee',
@@ -17,6 +18,7 @@ import {Email} from '../../../../assets/Js/smtp';
 })
 export class SearchEmplyeeComponent implements OnInit {
 
+  pdfSrc:any;
   searchForm: FormGroup;
   Users: any;
   adhars: any;
@@ -68,6 +70,9 @@ export class SearchEmplyeeComponent implements OnInit {
           }).then(message => { alert('Confirmation mail is send to user! Please wait User to confirm');
           this.searchForm.reset();
         });
+
+        this.pdfSrc = "https://firebasestorage.googleapis.com/v0/b/viudocs-c877f.appspot.com/o/test%2F1592047383671_Adharcard_bhargava.pdf";
+
         }
         //  else if(this.Users[i].Name.username !== SearchData.email) {
         //   window.alert('Please give valid email of user!!');

@@ -19,7 +19,8 @@ li {
   margin-right:50px;
 }
 .mat-toolbar.mat-primary {
-  background: linear-gradient(to bottom, white 0%, lightgray 100%);
+  /* background: linear-gradient(to bottom, white 0%, lightgray 100%); */
+  background: #fff;
   color: #fff;
 }
 .mybutton   {
@@ -37,7 +38,7 @@ li {
   box-shadow: #652d92 !important ;
 }
 #mbutton {
-  background-color: #652d92;
+  background-color: green;
   border-radius: 0;
 }
 .headIcon {
@@ -46,4 +47,33 @@ li {
 .headText {
   /* font-size: medium; */
   font-family: 'Raleway', sans-serif;
+}
+.mat-menu-item:hover:not([disabled]) {
+  background: rgba(0,0,0,.04);
+    border: none !important;
+}
+button:focus  {
+  outline: none !important;
+}
+.Home {
+  color: green;
+  /* font-family: "Nunito Sans", sans-serif; */
+  font-family: Impact, Charcoal, sans-serif;
+  box-shadow: green;
+  margin-right:50px;
+}
+.headelem {
+  color: black;
+  font-family: Impact, Charcoal, sans-serif;
+  margin-right:50px;
+
+}
+.mat-icon-button {
+  padding: 0;
+  min-width: 0;
+  width: 31px;
+  height: 30px;
+  flex-shrink: 0;
+  line-height: 25px;
+  border-radius: 50%;
 }

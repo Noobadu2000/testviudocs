@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  sideBarOpen = true;
+  sideBarOpen = false;
   title = 'viudocsApp';
   sidebarToggle(event) {
     this.sideBarOpen = !this.sideBarOpen;

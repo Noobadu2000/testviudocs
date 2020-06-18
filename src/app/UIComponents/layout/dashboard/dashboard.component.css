@@ -62,3 +62,14 @@
   margin-bottom: 15px;
   text-decoration: underline;
 }
+#matcardimg {
+    position: absolute;
+    top: 580px;
+    left: 65px;
+    font-size: 23pt;
+    font-family: "Nunito Sans", sans-serif;
+    width: 1270px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 20px;
+}

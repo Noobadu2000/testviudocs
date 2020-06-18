@@ -38,6 +38,21 @@ import { UploadPanComponent } from './UIComponents/main/upload-pan/upload-pan.co
 import { UploadInterComponent } from './UIComponents/main/upload-inter/upload-inter.component';
 import { UploadtenthComponent } from './UIComponents/main/uploadtenth/uploadtenth.component';
 import { SearchEmplyeeComponent } from './UIComponents/main/search-emplyee/search-emplyee.component';
+import { PdfViewerComponent } from './UIComponents/main/pdf-viewer/pdf-viewer.component';
+export {
+  PDFJSStatic,
+  PDFDocumentProxy,
+  PDFViewerParams,
+  PDFPageProxy,
+  PDFSource,
+  PDFProgressData,
+  PDFPromise
+} from 'pdfjs-dist';
+import { PDFJSStatic } from 'pdfjs-dist';
+
+declare global {
+  const PDFJS: PDFJSStatic;
+}
 const routes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'user_login', component: LoginComponent},
@@ -72,7 +87,8 @@ var firebaseConfig = {
     UploadPanComponent,
     UploadInterComponent,
     UploadtenthComponent,
-    SearchEmplyeeComponent
+    SearchEmplyeeComponent,
+    PdfViewerComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ export class HeadercomponentComponent implements OnInit {
 validuser = false;
 verfierUser = false;
 closed: boolean;
+panelOpenState: boolean;
 mySubscription: any;
   constructor(public datasvc: DataserviceService, public router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -38,8 +39,12 @@ mySubscription: any;
   toggleSideBar() {
     this.ToggleMe.emit();
   }
+  clicking() {
+    this.panelOpenState = !this.panelOpenState;
+  }
   loginclick() {
-    this.closed = !this.closed;
+    // this.closed = !this.closed;
+
     console.log(this.closed);
   }
 }
