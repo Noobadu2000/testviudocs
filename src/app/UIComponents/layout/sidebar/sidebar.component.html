@@ -11,7 +11,11 @@
   </mat-list-item>
   <mat-divider></mat-divider>
   <mat-list-item *ngIf="validuser" (click)="uploadDocuments()">
-    <mat-icon>cloud_upload</mat-icon><span> UplaodDocuments</span>
+    <mat-icon>cloud_upload</mat-icon><span> UploadDocuments</span>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item *ngIf="validuser" (click)="notifications()">
+    <mat-icon>cloud_upload</mat-icon><span> Notifications</span>
   </mat-list-item>
   <mat-divider></mat-divider>
   <mat-list-item *ngIf = "verifierUser" (click)="searchEmployee()" >

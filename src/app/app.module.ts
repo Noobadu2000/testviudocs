@@ -49,6 +49,7 @@ export {
   PDFPromise
 } from 'pdfjs-dist';
 import { PDFJSStatic } from 'pdfjs-dist';
+import { NotificationsComponent } from './UIComponents/layout/notifications/notifications.component';
 
 declare global {
   const PDFJS: PDFJSStatic;
@@ -61,7 +62,9 @@ const routes: Routes = [
   {path: 'contactus', component: ContactusComponent},
   {path: 'Registration', component: RegistrationComponent},
   {path : 'upload_docs', component: UploaddocumentsComponent},
-  {path: 'search-employee', component: SearchEmplyeeComponent}
+  {path: 'search-employee', component: SearchEmplyeeComponent},
+  {path: 'notifications', component: NotificationsComponent}
+
 ];
 var firebaseConfig = {
   apiKey: "AIzaSyCKH4amiPzdEJywtxI1xoOoT82dJ2gAdgk",
@@ -88,7 +91,8 @@ var firebaseConfig = {
     UploadInterComponent,
     UploadtenthComponent,
     SearchEmplyeeComponent,
-    PdfViewerComponent
+    PdfViewerComponent,
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,

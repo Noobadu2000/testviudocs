@@ -1,6 +1,6 @@
 <mat-card>
-  <mat-card-title>Search for the Details of Employee</mat-card-title><br>
-  <form role="form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <mat-card-title>Enter Verifier's email</mat-card-title><br>
+  <form role="form" [formGroup]="notificationsForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-md-10">
         <div class="form-group">
@@ -10,15 +10,11 @@
       </div>
       <div class="col-md-2">
         <button type="submit" class="btn btn-primary">
-          Search
+          Accept
         </button>
       </div>
     </div>
-    <div class="hello">
-    <embed src="http://www.africau.edu/images/default/sample.pdf" width="1000px" height="800px" />
-  </div>
   </form>
-  
 </mat-card>
 
-  <app-pdf-viewer [src]="pdfSrc" ></app-pdf-viewer>
+  

@@ -39,6 +39,9 @@ UserData;
   uploadDocuments() {
     this.router.navigate(['/upload_docs']);
   }
+  notifications(){
+    this.router.navigate(['/notifications']);
+  }
   searchEmployee() {
     this.router.navigate(['/search-employee']);
   }
