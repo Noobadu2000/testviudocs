@@ -29,6 +29,7 @@ export class SearchEmplyeeComponent implements OnInit {
       email: ['', Validators.compose([Validators.required])]
     });
     this.fbs.readUsers().subscribe(data => {
+    console.log(data,'khg');
       this.Users = data.map(e => {
         return {
           id: e.payload.doc.id,
@@ -71,7 +72,7 @@ export class SearchEmplyeeComponent implements OnInit {
           this.searchForm.reset();
         });
 
-        this.pdfSrc = "https://firebasestorage.googleapis.com/v0/b/viudocs-c877f.appspot.com/o/test%2F1592047383671_Adharcard_bhargava.pdf";
+        this.pdfSrc = "";
 
         }
         //  else if(this.Users[i].Name.username !== SearchData.email) {

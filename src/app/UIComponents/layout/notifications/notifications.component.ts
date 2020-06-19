@@ -16,7 +16,7 @@ import {Email} from '../../../../assets/Js/smtp';
 
   notificationsForm: FormGroup;
   Users: any;
-  requests: any;
+  requsers: any;
   constructor( private formbuilder: FormBuilder,private db: AngularFirestore, private fbs: FirebaseserviceService, private http: Http) { }
 
   ngOnInit(): void {
@@ -28,39 +28,39 @@ import {Email} from '../../../../assets/Js/smtp';
         return {
           id: e.payload.doc.id,
           isEdit: false,
-          Name: e.payload.doc.data(),
+          Name: e.payload.doc.data()['requestData'],
         };
       });
-    });
-
-    this.fbs.readUsers().subscribe(data => {
-      console.log("coming here");
-      this.requests = data.map(e => {
-        return {
-          id: e.payload.doc.id,
-          isEdit: false,
-          Name: e.payload.doc.data(),
-        };
-      });
-      console.log(this.requests[0].Name.verifier);
-    });
+    });  
   }
+
   onSubmit() {
     const notificationsData = {
   email: this.notificationsForm.controls.email.value,
     };
-
-    //this.datasvc.verfiersignin(loginData.username, loginData.password);
-    
     for (let i = 0; i < this.Users.length; i++) {
       if (this.Users[i].id !== 'requsers') {
-        if (this.Users[i].Name.verifier === notificationsData.email) {
-          this.db.collection('requsers')[i].access= true;
-          
-          //this.datasvc.registerdetails(this.NewEmail, this.NewName);
+        console.log("reached1")
+        if (this.Users[i].Name.verifier === notificationsData.email ) {
+          console.log("reached");
+          this.db.collection("requsers")[i].set({access:true});
+          //this.Users[i].Name.set({access:'true'});
 
+      //  this.db
+       //.collection("requsers")
+       //.doc(data.payload.doc.id)
+       //.set({ access: true });
+          
         }
+      }
+      else{
+      window.alert("Request not found");
       }
     }
   }
+
+  onClick() {
+    window.alert("working");
+      }
 }
+

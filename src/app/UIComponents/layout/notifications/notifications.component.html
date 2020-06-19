@@ -1,6 +1,7 @@
-<mat-card>
-  <mat-card-title>Enter Verifier's email</mat-card-title><br>
-  <form role="form" [formGroup]="notificationsForm" (ngSubmit)="onSubmit()">
+
+
+<h2>Enter Verifier's email</h2>
+<form role="form" [formGroup]="notificationsForm" (ngSubmit)="onSubmit()" (ngClick)="onClick()">
     <div class="row">
       <div class="col-md-10">
         <div class="form-group">
@@ -12,9 +13,10 @@
         <button type="submit" class="btn btn-primary">
           Accept
         </button>
+
+          <button ng-click="onClick()" >
+          Decline
+        </button>
       </div>
     </div>
   </form>
-</mat-card>
-
-  
