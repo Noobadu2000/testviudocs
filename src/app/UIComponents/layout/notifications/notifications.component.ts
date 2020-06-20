@@ -28,7 +28,7 @@ export class NotificationsComponent implements OnInit {
     this.notificationsForm = this.formbuilder.group({
       email: ['', Validators.compose([Validators.required])]
     });
-    this.loggedInUser = localStorage.getItem('email');
+    this.loggedInUser = sessionStorage.getItem('email');
     this.getRequestVerifier();
 
   }

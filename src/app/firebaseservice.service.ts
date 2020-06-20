@@ -20,12 +20,16 @@ export class FirebaseserviceService {
       .set('Access-Control-Allow-Origin', '*');
     return this.db.collection('users').snapshotChanges();
   }
-  readAdhar() {
-    return this.db.collection('adharfiles').snapshotChanges();
+  getDoc(fileType:string) {
+    return this.db.collection(fileType).snapshotChanges();
   }
 
   requestVerfier = () => {
     const headers = new HttpHeaders()
+    return this.db.collection('requsers').snapshotChanges();
+  }
+  getUsersById = (email: string, id: string) => {
+    console.log(id)
     return this.db.collection('requsers').snapshotChanges();
   }
 }

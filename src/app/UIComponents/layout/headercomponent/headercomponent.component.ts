@@ -48,6 +48,6 @@ mySubscription: any;
     console.log(this.closed);
   }
   logout = () => {
-    localStorage.clear();
+    sessionStorage.clear();
   }
 }

@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
   <mat-card-title>Search for the Details of Employee</mat-card-title><br>
   <form role="form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <div class="row">
@@ -15,10 +15,48 @@
       </div>
     </div>
     <div class="hello">
-    <embed src="http://www.africau.edu/images/default/sample.pdf" width="1000px" height="800px" />
-  </div>
+      <div *ngIf="searchedUser.length>0">
+        {{searchedUser[0].name}}
+        <object width="1000" height="800" [attr.data]="getByPassImg(searchedUser)" type="application/pdf"></object>
+      </div>
+    </div>
   </form>
 
+</mat-card> -->
+<mat-card >
+  <mat-card-content>
+    <mat-card-title>Search for the Details of the Employee</mat-card-title> <br/>
+    <form [formGroup] = "searchForm" (ngSubmit) = "onSubmit()">
+      <div class="row">
+        <div class="col-md-10">
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Search with email here"
+            formControlName="email" />
+        </div>
+        <div class="col-md">
+          <button type="submit" class="btn btn-primary">
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="searchedUser.length>0" style="margin-top: 2%;" >
+      <div class="row">
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-primary" (click) = "showFile(searchedUser)" *ngIf="searchedUser[0].adharFile.length>0">Adhar
+              </button>
+            </div>
+            <div class="col-md-12" style="margin-top: 10px;">
+              <button class="btn btn-primary" (click) = "showFile(searchedUser)" *ngIf="searchedUser[0].panFile.length>0">Pan
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9" *ngIf="isShowFile">
+          <object width="800" height="800" [attr.data]="getByPassImg(searchedUser)" type="application/pdf"></object>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
 </mat-card>
-
-  <app-pdf-viewer [src]="pdfSrc" ></app-pdf-viewer>
