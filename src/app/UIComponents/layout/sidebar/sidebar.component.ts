@@ -51,6 +51,7 @@ UserData;
     this.validuser = val;
     this.UserData  = this.datasvc.getdetails();
     console.log(this.UserData.email);
+    localStorage.setItem('email', this.UserData.email);
   });
   this.datasvc.getverfierLoginData().subscribe((val) => {
     this.verifierUser = val;

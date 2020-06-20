@@ -1,7 +1,5 @@
-
-
-<h2>Enter Verifier's email</h2>
-<form role="form" [formGroup]="notificationsForm" (ngSubmit)="onSubmit()" (ngClick)="onClick()">
+<h2>Request Verfiers</h2>
+<!-- <form role="form" [formGroup]="notificationsForm" (ngSubmit)="onSubmit()" (ngClick)="onClick()">
     <div class="row">
       <div class="col-md-10">
         <div class="form-group">
@@ -19,4 +17,37 @@
         </button>
       </div>
     </div>
-  </form>
+  </form>-->
+<div *ngIf="Users.length>0; else empty">
+  <div *ngFor="let user of Users">
+    <mat-card>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-10">
+            {{user.Name}}
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary " (click) = "Response(1, user.id)">
+                  Accept
+                </button>
+              </div>
+              <div class="col-md">
+                <button type="submit" class="btn btn-warning" (click) = "Response(2, user.id)">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <br />
+  </div>
+</div>
+
+<ng-template #empty>
+<h3 style="text-align: center;
+margin-top: 10%;">No More Pending Request</h3>
+</ng-template>

@@ -23,4 +23,9 @@ export class FirebaseserviceService {
   readAdhar() {
     return this.db.collection('adharfiles').snapshotChanges();
   }
+
+  requestVerfier = () => {
+    const headers = new HttpHeaders()
+    return this.db.collection('requsers').snapshotChanges();
+  }
 }

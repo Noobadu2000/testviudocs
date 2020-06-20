@@ -50,7 +50,7 @@
           </button>
         </li>
         <li>
-          <button class="btn mybutton" routerLink="/Registration" *ngIf="validuser || verfierUser">
+          <button class="btn mybutton" routerLink="/" (click) = "logout()" *ngIf="validuser || verfierUser">
             <!-- <mat-icon style="vertical-align: bottom;"  class="headIcon">exit_to_app</mat-icon> -->
             <a class="logintext"><span class="headText">Logout</span></a>
           </button>

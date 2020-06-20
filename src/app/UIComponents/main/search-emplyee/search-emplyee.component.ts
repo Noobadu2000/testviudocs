@@ -10,6 +10,8 @@ import { HttpHeaders } from '@angular/common/http';
 import { Http, Headers } from '@angular/http';
 import {Email} from '../../../../assets/Js/smtp';
 import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
+import { DataserviceService } from 'src/app/dataservice.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 // declare let Email: any;
 @Component({
   selector: 'app-search-emplyee',
@@ -22,7 +24,10 @@ export class SearchEmplyeeComponent implements OnInit {
   searchForm: FormGroup;
   Users: any;
   adhars: any;
-  constructor( private formbuilder: FormBuilder, private fbs: FirebaseserviceService, private http: Http) { }
+  constructor( private formbuilder: FormBuilder,
+    private fbs: FirebaseserviceService,
+    private datasvc: DataserviceService,
+    private db: AngularFirestore) { }
 
   ngOnInit(): void {
     this.searchForm = this.formbuilder.group({
@@ -55,10 +60,18 @@ export class SearchEmplyeeComponent implements OnInit {
     const SearchData = {
       email: this.searchForm.controls.email.value,
     };
+
+    // this.datasvc.signup(signupData.username, signupData.password);
+
     for (let i = 0; i < this.Users.length; i++) {
       if (this.Users[i].id !== 'users') {
         if (this.Users[i].Name.username === SearchData.email) {
-          console.log("coming here");
+          const requestUser = {
+            access: false,
+            user:SearchData.email,
+            verifier: localStorage.getItem('email')
+          };
+          this.db.collection('requsers').add({requestUser});
           Email.send({
             Host: 'smtp.elasticemail.com',
             Username: 'techviudocs@gmail.com',

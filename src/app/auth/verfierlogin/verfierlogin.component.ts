@@ -43,6 +43,7 @@ export class VerfierloginComponent implements OnInit {
           this.NewEmail = this.Users[i].Name.username;
           this.NewName = this.Users[i].Name.firstname;
           console.log(this.NewEmail);
+          localStorage.setItem('email', this.NewEmail);
           console.log(this.NewName);
           this.datasvc.registerdetails(this.NewEmail, this.NewName);
         }
