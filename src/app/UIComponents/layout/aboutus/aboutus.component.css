@@ -1,0 +1,18 @@
+.button {
+    border: none;
+    background: url('../../../../assets/buttons/send-message.png') no-repeat top left;
+    padding: 2px 8px;
+}
+@font-face {
+    font-family: 'SofiaPro-Light';
+    src: URL(" ../../../../../../assets/ttf/Sofia Pro Medium.ttf") format('truetype');
+  }
+  .font-style{
+    font-family: SofiaPro-Light;
+    font-size: 11pt;
+    text-align: center;
+  }
+
+  .text-field {
+    background-color: #ebebeb;
+  }

@@ -27,7 +27,8 @@
 </mat-card>-->
 <p class="heading header-label">Welcome Back</p>
 <p class="sign-caption">Please Sign to access your account</p>
-<p class="registration-caption">Don't have an account? <a href="javascript:;" style="color: #4eac46;" (click) = "navigate('auth/Registration')">Register</a></p>
+<p class="registration-caption">Don't have an account? <a href="javascript:;" style="color: #4eac46;"
+    (click)="navigate('auth/Registration')">Register</a></p>
 <form [formGroup]="loginform" (ngSubmit)="onSubmit()" style="padding:14%;padding-top: 20px;">
   <mat-error *ngIf="loginInvalid">
     The username and password were not recognised
@@ -47,5 +48,5 @@
   <a href="javascript;" class="forgot-password">Forgot Password?</a>
   <p class="terms-condition">By Signing up you agree to the ViuDocs <span class="accept-text">Terms</span> and <span
       class="accept-text">Privacy Policy</span></p>
-      <button type="submit" class="btn register">Sign in</button>
+  <button type="submit" class="btn register">Sign in</button>
 </form>
