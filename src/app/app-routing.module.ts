@@ -7,6 +7,7 @@ import { AboutusComponent } from './UIComponents/layout/aboutus/aboutus.componen
 import { DashboardComponent } from './UIComponents/layout/dashboard/dashboard.component';
 import { Routes } from '@angular/router';
 import { UploaddocumentsComponent } from './UIComponents/main/uploaddocuments/uploaddocuments.component';
+import { TeamComponent } from './UIComponents/team/team.component';
 
 export const AppRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -36,6 +37,10 @@ export const AppRoutes: Routes = [
   {
     path: 'notifications', component: NotificationsComponent,
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'team',
+    loadChildren: () => import('./UIComponents/team/team.module').then(team => team.TeamModule)
   }
 
 ];

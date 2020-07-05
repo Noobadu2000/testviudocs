@@ -101,3 +101,6 @@ button:focus  {
   line-height: 25px;
   border-radius: 50%;
 }
+.pointer {
+  cursor: pointer;
+}

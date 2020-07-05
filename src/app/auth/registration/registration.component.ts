@@ -17,7 +17,7 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private datasvc: DataserviceService,
-    private db: AngularFirestoreModule,
+    private db: AngularFirestore,
     private router: Router
   ) { }
 
@@ -55,28 +55,28 @@ export class RegistrationComponent implements OnInit {
     }
   }
   regSubmit() {
-    // const signupData = {
-    //   username: this.regform.controls.username.value,
-    //   password: this.regform.controls.password.value,
-    //   firstname: this.regform.controls.firstname.value,
-    //   lastname: this.regform.controls.lastname.value,
-    // };
-    // if (this.regform.valid) {
-    //   this.datasvc.signup(signupData.username, signupData.password, signupData.firstname, signupData.lastname, (res: any) => {
-    //     if (!res.error) {
-    //       this.db.collection('users').add({ signupData });
-    //       window.alert(res.message);
-    //       this.router.navigate(["auth/user_login"]);
-    //     } else {
-    //       window.alert(res.message);
-    //     }
-    //   });
-    // } else {
-    //   Object.keys(this.regform.controls).forEach(field => {
-    //     const control = this.regform.get(field);
-    //     control.markAsTouched({ onlySelf: true });
-    //   });
-    // }
+    const signupData = {
+      username: this.regform.controls.username.value,
+      password: this.regform.controls.password.value,
+      firstname: this.regform.controls.firstname.value,
+      lastname: this.regform.controls.lastname.value,
+    };
+    if (this.regform.valid) {
+      this.datasvc.signup(signupData.username, signupData.password, signupData.firstname, signupData.lastname, (res: any) => {
+        if (!res.error) {
+          this.db.collection('users').add({ signupData });
+          window.alert(res.message);
+          this.router.navigate(["auth/user_login"]);
+        } else {
+          window.alert(res.message);
+        }
+      });
+    } else {
+      Object.keys(this.regform.controls).forEach(field => {
+        const control = this.regform.get(field);
+        control.markAsTouched({ onlySelf: true });
+      });
+    }
 
   }
 }
